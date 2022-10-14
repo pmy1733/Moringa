@@ -27,7 +27,7 @@ const DAYS_OF_THE_WEEK=[
     "Saturday"
 ];
 
-
+// calculate day of the week as an interger btween 0-6
 function computeDayOfTheweek(){
 
     let month = getMonth();
@@ -69,7 +69,7 @@ function main(){
     if (akanName==undefined){
         akanName="Error: please use number within the ranges provided."
     }
-    // //Output the name of the user for the birthday given
+    // Output the name of the user for the birthday given
      document.getElementById("name_label").innerHTML = " " + akanName;
     
     
@@ -80,6 +80,7 @@ function getMonth(){
     if(month > 0  && month <=12){
     return month;
     }else{
+        document.getElementById("month").value="";
         alert (" Month must be between 1 - 12.");
      
     }
@@ -91,6 +92,7 @@ function getDay(){
     if(day > 0 && day<=31){
     return day;
     }else{
+        document.getElementById("day").value="";
         alert (" Day must be between 1 - 31.");
     
     }
@@ -101,12 +103,14 @@ function getYear(){
 
     let year = document.getElementById("year").value;
     if(year.length != 4){
+        document.getElementById("year").value="";
         alert("year must be 4 digits i.e 1989");
     }else{
 
     return year;
     }
 }
+// get the selected gender radio button
 function getGender(){    
     let gender = checkRadiobutton();
      return gender;
