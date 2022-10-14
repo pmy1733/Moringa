@@ -34,12 +34,15 @@
           </div>
           </div>
           <label>Select Gender</label>
-          <input type="radio" name="gender" value="Male" checked="checked">Male
-          <input type="radio" name="gender" value="Female">Female
+          <ul type="none">
+           <li><input type="radio" name="gender" value="Male" checked="checked">Male</li> 
+           <li> <input type="radio" name="gender" value="Female">Female</li>
+          </ul>
+
               <div class="form-group">        
                 <div class="col-sm-offset-2 col-sm-10">
-                  <button onclick=" main()">Get Name</button>
-                  <label >Name: </button><label id="name_label"></label>
+                  <button onclick=" main()">Get Name</button><br>
+                  <label >Your Name is: </button><label id="name_label"></label>
                 </div>
               </div>
           </div>          

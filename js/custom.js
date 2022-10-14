@@ -27,17 +27,14 @@ const DAYS_OF_THE_WEEK=[
     "Saturday"
 ];
 
-function getGender(){    
-    let gender = checkRadiobutton();
-     return gender;
-}
-function getUserinputAndCalculateDay(){
 
-    let year = document.getElementById("year").value;
+function computeDayOfTheweek(){
+
+    let month = getMonth();
+    let day = getDay();
+    let year = getYear();
     let century = parseInt (year.substring(0,2));
     year=parseInt(year);
-    let month = document.getElementById("month").value;
-    let day = document.getElementById("day").value;
 
     let dayOfTheWeek = Math.round (( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(month+1)/10)) + day ) % 7);
 
@@ -60,15 +57,57 @@ function checkRadiobutton() {
 function main(){
     let akanName = null;
     let gender = getGender();
-    let dayOfTheweek = getUserinputAndCalculateDay();
+    let dayOfTheweek = computeDayOfTheweek();
 
     if(gender.toLocaleLowerCase().startsWith('m')){
         akanName=MALE_NAMES[dayOfTheweek];
     } else{
         akanName= FFEMALE_NAMES[dayOfTheweek];
     }
+
+    // check if valid inputs were provided otherwise the computation will result to undefined
+    if (akanName==undefined){
+        akanName="Error: please use number within the ranges provided."
+    }
     // //Output the name of the user for the birthday given
      document.getElementById("name_label").innerHTML = " " + akanName;
     
     
+}
+//get and validate the month
+function getMonth(){
+    let month = document.getElementById("month").value;
+    if(month > 0  && month <=12){
+    return month;
+    }else{
+        alert (" Month must be between 1 - 12.");
+     
+    }
+}
+
+//get and validate the day
+function getDay(){
+    let day = document.getElementById("day").value;
+    if(day > 0 && day<=31){
+    return day;
+    }else{
+        alert (" Day must be between 1 - 31.");
+    
+    }
+}
+
+//get and validate the year
+function getYear(){
+
+    let year = document.getElementById("year").value;
+    if(year.length != 4){
+        alert("year must be 4 digits i.e 1989");
+    }else{
+
+    return year;
+    }
+}
+function getGender(){    
+    let gender = checkRadiobutton();
+     return gender;
 }
