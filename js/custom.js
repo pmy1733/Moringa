@@ -28,7 +28,7 @@ const DAYS_OF_THE_WEEK=[
 ];
 
 function getGender(){
-    let gender = prompt("Enter your Age: ");
+    let gender = prompt("Enter your Gender: ");
     return gender;
 }
 function getUserinputAndCalculateDay(){
