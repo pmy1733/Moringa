@@ -1,2 +1,2 @@
 # weekTwo
-Moringa assignments and projects
+Moringa  week two  independet projects
