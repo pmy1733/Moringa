@@ -27,20 +27,34 @@ const DAYS_OF_THE_WEEK=[
     "Saturday"
 ];
 
-function getGender(){
-    let gender = prompt("Enter your Gender: ");
-    return gender;
+function getGender(){    
+    let gender = checkRadiobutton();
+     return gender;
 }
 function getUserinputAndCalculateDay(){
-    let year = prompt("Enter Year of Birth(4 digits): ");
-    let month = prompt("Enter Month of Birth (1-12): ");
-    let day = prompt("Enter Day of Birth (1-31): ");
 
+    let year = document.getElementById("year").value;
     let century = parseInt (year.substring(0,2));
     year=parseInt(year);
+    let month = document.getElementById("month").value;
+    let day = document.getElementById("day").value;
 
-   return Math.round (( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(month+1)/10)) + day ) % 7);
+    let dayOfTheWeek = Math.round (( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(month+1)/10)) + day ) % 7);
+
+    return dayOfTheWeek;
     
+}
+
+function checkRadiobutton() {
+
+    let gender = null;
+    let ele = document.getElementsByName('gender');
+      
+    for(i = 0; i < ele.length; i++) {
+        if(ele[i].checked)
+        gender = ele[i].value;
+    }
+    return gender;
 }
 
 function main(){
@@ -53,8 +67,8 @@ function main(){
     } else{
         akanName= FFEMALE_NAMES[dayOfTheweek];
     }
-    //Output the name of the user for the birthday given
-    document.getElementById("name").innerHTML = "your name is: " + akanName;
+    // //Output the name of the user for the birthday given
+     document.getElementById("name_label").innerHTML = " " + akanName;
+    
     
 }
-
