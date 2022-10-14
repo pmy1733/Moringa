@@ -39,7 +39,7 @@ function getUserinputAndCalculateDay(){
     let century = parseInt (year.substring(0,2));
     year=parseInt(year);
 
-    return Math.round ( ( ( (century/4) -2*century-1) + ((5*YY/4) ) + ((26*(month+1)/10)) + day ) % 7);
+   return Math.round (( ( (century/4) -2*century-1) + ((5*year/4) ) + ((26*(month+1)/10)) + day ) % 7);
     
 }
 
@@ -55,4 +55,6 @@ function main(){
     }
     //Output the name of the user for the birthday given
     document.getElementById("name").innerHTML = "your name is: " + akanName;
+    
 }
+
