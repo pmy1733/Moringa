@@ -54,4 +54,5 @@ function main(){
         akanName= FFEMALE_NAMES[dayOfTheweek];
     }
     //Output the name of the user for the birthday given
+    document.getElementById("name").innerHTML = "your name is: " + akanName;
 }
