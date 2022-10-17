@@ -6,7 +6,7 @@ p  {
     border:  solid 4 em;
 };
 body {
-    background-color: lightblue;
+    background-image: url("images/background.jpg");
   }
 #myButton{
     border: none;
