@@ -42,7 +42,7 @@ function computeDayOfTheweek(){
     
 }
 
-function checkRadiobutton() {
+function checkRadiobutton() { //check what button is selected and return it
 
     let gender = null;
     let ele = document.getElementsByName('gender');
@@ -54,12 +54,12 @@ function checkRadiobutton() {
     return gender;
 }
 
-function main(){
+function main(){ // compute for the Akan name and return it
     let akanName = null;
     let gender = getGender();
     let dayOfTheweek = computeDayOfTheweek();
 
-    if(gender.toLocaleLowerCase().startsWith('m')){
+    if(gender.toLocaleLowerCase().startsWith('m')){ // check if the gender is male
         akanName=MALE_NAMES[dayOfTheweek];
     } else{
         akanName= FFEMALE_NAMES[dayOfTheweek];
