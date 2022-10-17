@@ -1,0 +1,10 @@
+#outer_div  {
+    border:  solid 4 em;
+};
+
+p  {
+    border:  solid 4 em;
+};
+body {
+    background-color: lightblue;
+  }
