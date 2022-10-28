@@ -14,7 +14,7 @@ Experienced Software Engineer focused on the delivery of quality software soluti
 The web application code can be clonned from: https://github.com/hgaskins/weekTwo.git
 ## Live Link
 
-https://github.com/pmy1733/weekTwo/
+https://pmy1733.github.io/weekTwo/
 ## BDD.
 
 * See a  small description of what the application does on the landing page.
